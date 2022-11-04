@@ -1,11 +1,9 @@
 <script lang="ts">
   import { getPost } from '../store/posts';
 
-  export let params: {
-    id: number,
-  };
+  export let params: {[key: string]: string};
 
-  const post = getPost(params.id);
+  const post = getPost(+params.id);
 </script>
 
 {#if $post.isSuccess}
