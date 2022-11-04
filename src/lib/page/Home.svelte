@@ -1,35 +1,29 @@
 <script lang="ts">
-  import { getJoke } from "../repository/jokes";
+  import { getJoke } from "../store/jokes";
 
-  import { useQuery } from '@sveltestack/svelte-query';
-
-  const q = useQuery('joke', getJoke, { staleTime: 0 });
-
-  const refresh = () => {
-    $q.refetch();
-  };
+  const joke = getJoke();
 </script>
 
 <h1 class="text-2xl text-center mt-5">Home</h1>
 
-{#if $q.isSuccess}
+{#if $joke.isSuccess}
   <p class="text-center">
-    {$q.data?.joke}
+    {$joke.data?.joke}
   </p>
 {/if}
 
-{#if $q.isError}
+{#if $joke.isError}
   <p class="text-center">
     Error while loading the joke.
   </p>
 {/if}
 
-{#if $q.isLoading}
+{#if $joke.isLoading || $joke.isRefetching}
   <p class="text-center">
     Loading...
   </p>
 {/if}
 
 <div class="text-center mt-5">
-  <button on:click={refresh} class="border px-3 py-1 rounded bg-green-500 text-white">Refresh</button>
+  <button on:click={() => $joke.refetch()} class="border px-3 py-1 rounded bg-green-500 text-white">Refresh</button>
 </div>
