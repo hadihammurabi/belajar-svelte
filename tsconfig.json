@@ -23,7 +23,10 @@
     "noUnusedParameters": true,
     "isolatedModules": false,
     "experimentalDecorators": true,
-    "importsNotUsedAsValues": "remove"
+    "importsNotUsedAsValues": "remove",
+    "paths": {
+      "src/*": ["src/*"]
+    }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
 }

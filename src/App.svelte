@@ -1,11 +1,12 @@
 <script>
     import { Router, Route, link } from 'svelte-routing';
-    import Blog from './lib/page/Blog.svelte';
-    import BlogDetail from './lib/page/BlogDetail.svelte';
-    import Home from './lib/page/Home.svelte';
+
+    import Blog from 'src/page/Blog.svelte';
+    import BlogDetail from 'src/page/BlogDetail.svelte';
+    import Home from 'src/page/Home.svelte';
+    import Counter from 'src/page/Counter.svelte';
 
     import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query';
-    import Counter from './lib/page/Counter.svelte';
     const queryClient = new QueryClient();
 </script>
 

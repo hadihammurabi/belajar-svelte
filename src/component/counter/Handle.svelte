@@ -1,5 +1,5 @@
 <script>
-  import { increment, decrement } from '../../store/counters';
+  import { increment, decrement } from 'src/store/counters';
 </script>
 
 <div class="flex justify-center space-x-3">

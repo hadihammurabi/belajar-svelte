@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getPost } from '../store/posts';
+  import { getPost } from 'src/store/posts';
 
   export let params: {[key: string]: string};
 

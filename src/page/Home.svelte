@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getJoke } from "../store/jokes";
+  import { getJoke } from "src/store/jokes";
 
   const joke = getJoke();
 </script>

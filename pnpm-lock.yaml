@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@rollup/plugin-alias': ^4.0.2
   '@rollup/plugin-typescript': ^9.0.2
   '@sveltejs/vite-plugin-svelte': ^1.1.0
   '@sveltestack/svelte-query': ^1.6.0
@@ -21,6 +22,7 @@ dependencies:
   svelte-routing: 1.6.0_besnmoibwkhwtentvwuriss7pa
 
 devDependencies:
+  '@rollup/plugin-alias': 4.0.2
   '@rollup/plugin-typescript': 9.0.2_typescript@4.8.4
   '@sveltejs/vite-plugin-svelte': 1.1.0_svelte@3.52.0+vite@3.2.2
   '@tsconfig/svelte': 3.0.0
@@ -71,6 +73,18 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
+    dev: true
+
+  /@rollup/plugin-alias/4.0.2:
+    resolution: {integrity: sha512-1hv7dBOZZwo3SEupxn4UA2N0EDThqSSS+wI1St1TNTBtOZvUchyIClyHcnDcjjrReTPZ47Faedrhblv4n+T5UQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      slash: 4.0.0
     dev: true
 
   /@rollup/plugin-typescript/9.0.2_typescript@4.8.4:
@@ -1008,6 +1022,11 @@ packages:
       graceful-fs: 4.2.10
       mkdirp: 0.5.6
       rimraf: 2.7.1
+    dev: true
+
+  /slash/4.0.0:
+    resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
+    engines: {node: '>=12'}
     dev: true
 
   /sorcery/0.10.0:

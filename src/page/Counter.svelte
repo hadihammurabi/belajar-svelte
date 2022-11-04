@@ -1,6 +1,6 @@
 <script>
-  import Counter from '../component/counter/Counter.svelte';
-  import Handle from '../component/counter/Handle.svelte';
+  import Counter from 'src/component/counter/Counter.svelte';
+  import Handle from 'src/component/counter/Handle.svelte';
 </script>
 
 <main class="text-center">

@@ -1,5 +1,6 @@
 <script>
-  import { getAllPosts } from "../store/posts";
+  import { getAllPosts } from "src/store/posts";
+  import { Link } from "svelte-routing";
 
   const posts = getAllPosts();
 </script>
@@ -17,7 +18,7 @@
       </p>
       
       <div class="mb-5" style="position: relative">
-        <a href={`/blog/${post.id}`} class="text-blue-600" style="position: absolute; right: 0">Selengkapnya</a>
+        <Link to={`/blog/${post.id}`} class="text-blue-600" style="position: absolute; right: 0">Selengkapnya</Link>
       </div>
     </div>
   </div>
