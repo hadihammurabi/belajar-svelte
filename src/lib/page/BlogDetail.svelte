@@ -1,7 +1,9 @@
 <script lang="ts">
   import { getPost } from '../store/posts';
 
-  export let params;
+  export let params: {
+    id: number,
+  };
 
   const post = getPost(params.id);
 </script>
