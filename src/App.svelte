@@ -5,6 +5,7 @@
     import Home from './lib/page/Home.svelte';
 
     import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query';
+    import Counter from './lib/page/Counter.svelte';
     const queryClient = new QueryClient();
 </script>
 
@@ -15,6 +16,9 @@
   <a href="/blog" use:link>
     <button class="border px-3 py-1 rounded bg-blue-500 text-white">Blog</button>
   </a>
+  <a href="/counter" use:link>
+    <button class="border px-3 py-1 rounded bg-blue-500 text-white">Counter</button>
+  </a>
 </nav>
 
 <QueryClientProvider client={queryClient}>
@@ -22,5 +26,6 @@
     <Route path='/'><Home /></Route>
     <Route path='/blog'><Blog /></Route>
     <Route path='/blog/:id' let:params><BlogDetail {params} /></Route>
+    <Route path='/counter'><Counter /></Route>
   </Router>
 </QueryClientProvider>
