@@ -1,15 +1,14 @@
 <script>
-  import { getAllPosts } from "../repository/posts";
-  import { useQuery } from '@sveltestack/svelte-query';
+  import { getAllPosts } from "../store/posts";
 
-  const q = useQuery(['posts'], getAllPosts);
+  const posts = getAllPosts();
 </script>
 
 <h1 class="text-2xl text-center mt-5">Blog</h1>
 
-{#if $q.isSuccess}
+{#if $posts.isSuccess}
 <div class="flex flex-wrap w-full">
-  {#each $q.data as post}
+  {#each $posts.data as post}
   <div class="w-1/4 p-3">
     <div class="shadow w-full h-full p-3">
       <h3 class="text-3xl">{post.title}</h3>
@@ -26,7 +25,7 @@
 </div>
 {/if}
 
-{#if $q.isLoading}
+{#if $posts.isLoading}
   <p class="text-center">
     Loading...
   </p>

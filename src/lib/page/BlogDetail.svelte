@@ -1,18 +1,17 @@
 <script lang="ts">
-  import { getPost } from '../repository/posts';
-  import { useQuery } from '@sveltestack/svelte-query';
+  import { getPost } from '../store/posts';
 
   export let params;
 
-  const q = useQuery(['posts', params.id], () => getPost(params.id));
+  const post = getPost(params.id);
 </script>
 
-{#if $q.isSuccess}
+{#if $post.isSuccess}
   <h1 class="text-2xl">
-    {$q.data.title}
+    {$post.data.title}
   </h1>
 
   <p>
-    {$q.data.body}
+    {$post.data.body}
   </p>
 {/if}
